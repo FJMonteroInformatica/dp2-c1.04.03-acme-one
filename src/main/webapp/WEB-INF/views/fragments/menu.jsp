@@ -22,6 +22,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-suboption code="master.menu.juanlo" action="https://openai.com/blog/chatgpt/"/>
 			<acme:menu-suboption code="master.menu.fran" action="https://github.com/"/>
+			<acme:menu-suboption code="master.menu.josemi" action="https://www.wikipedia.org/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
