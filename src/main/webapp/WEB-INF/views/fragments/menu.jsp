@@ -24,6 +24,7 @@
 			<acme:menu-suboption code="master.menu.fran" action="https://github.com/"/>
 			<acme:menu-suboption code="master.menu.josemi" action="https://www.wikipedia.org/"/>
 			<acme:menu-suboption code="master.menu.joscasvaz" action="https://www.realbetisbalompie.es/"/>
+			<acme:menu-suboption code="master.menu.seraguoro" action="https://grugbrain.dev/"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
