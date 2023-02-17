@@ -8,8 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-- Sergio Aguayo Orozco
-- José Ignacio Castro Vázquez
-- José Miguel Iborra Conejo
-- Juan López Quirós
-- Francisco Jesús Montero Martínez
+- Sergio Aguayo Orozco (seraguoro@alum.us.es)
+- José Ignacio Castro Vázquez (joscasvaz@alum.us.es)
+- José Miguel Iborra Conejo (josibocon@alum.us.es)
+- Juan López Quirós (jualopqui@alum.us.es)
+- Francisco Jesús Montero Martínez (framonmar7@alum.us.es)
