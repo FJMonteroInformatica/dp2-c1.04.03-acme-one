@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.validator.constraints.URL;
+
 import acme.framework.data.AbstractRole;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +34,7 @@ public class Lecturer extends AbstractRole {
 	@Max(value = 101)
 	protected String			qualificationsList;
 
+	@URL
 	protected String			link;
 
 	// Derived attributes -----------------------------------------------------
