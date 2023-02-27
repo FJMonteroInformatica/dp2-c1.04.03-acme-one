@@ -1,8 +1,6 @@
 
 package acme.roles;
 
-import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 
@@ -20,23 +18,23 @@ public class Student extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long		serialVersionUID	= 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Length(min = 0, max = 76)
-	protected String				statement;
+	@Length(max = 76)
+	protected String			statement;
 
 	@NotBlank
-	@Length(min = 0, max = 101)
-	protected Collection<String>	strongFeatures;
+	@Length(max = 101)
+	protected String			strongFeatures;
 
 	@NotBlank
-	@Length(min = 0, max = 101)
-	protected Collection<String>	weakFeatures;
+	@Length(max = 101)
+	protected String			weakFeatures;
 
 	@URL
-	protected String				informationLink;
+	protected String			informationLink;
 
 }
