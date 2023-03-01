@@ -67,6 +67,8 @@ public class Offer extends AbstractEntity {
 		final long endMillis = this.availabilityPeriodEnd.getTime();
 		final long instantiationMillis = this.instantiationMoment.getTime();
 
+		// TODO: Requirements describe that the availability period must be 
+		//       "at least one day AFTER the offer is INSTANTIATED not before"
 		final boolean startIsOneDayBeforeInstantiation = startMillis - ChronoUnit.HOURS.getDuration().toMillis() >= instantiationMillis;
 
 		final boolean availabilityPeriodMoreThanOneWeek = startMillis - ChronoUnit.WEEKS.getDuration().toMillis() >= endMillis;
