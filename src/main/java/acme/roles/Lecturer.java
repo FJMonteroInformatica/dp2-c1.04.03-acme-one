@@ -47,7 +47,7 @@ public class Lecturer extends AbstractRole {
 
 	@NotNull
 	@Valid
-	@ManyToOne(optional = false)
+	@ManyToOne()
 	protected Course			course;
 
 }
