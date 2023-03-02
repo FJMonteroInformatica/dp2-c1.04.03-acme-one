@@ -3,8 +3,7 @@ package entities.course;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -17,7 +16,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Getter
 @Setter
 public class Course extends AbstractEntity {
@@ -41,8 +39,6 @@ public class Course extends AbstractEntity {
 	@Max(value = 101)
 	protected String			anAbstract;
 
-	//Indication attribute missing
-
 	@PositiveOrZero
 	protected Double			price;
 
@@ -50,6 +46,13 @@ public class Course extends AbstractEntity {
 	protected String			link;
 
 	// Derived attributes -----------------------------------------------------
+
+
+	@Transient
+	public CourseType getType() {
+
+		return null;
+	}
 
 	// Relationships ----------------------------------------------------------
 
