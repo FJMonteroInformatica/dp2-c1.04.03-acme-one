@@ -29,11 +29,11 @@ public class Enrolment extends AbstractEntity {
 	protected String			code;
 
 	@NotBlank
-	@Length(min = 0, max = 76)
+	@Length(max = 76)
 	protected String			motivation;
 
 	@NotBlank
-	@Length(min = 0, max = 101)
+	@Length(max = 101)
 	protected String			goals;
 
 	//TODO: Transient getWorkTime() without using workbook attribute, which must be deleted

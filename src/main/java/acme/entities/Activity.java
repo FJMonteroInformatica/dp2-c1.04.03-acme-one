@@ -32,11 +32,11 @@ public class Activity extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Length(min = 0, max = 76)
+	@Length(max = 76)
 	protected String			title;
 
 	@NotBlank
-	@Length(min = 0, max = 101)
+	@Length(max = 101)
 	protected String			summary; //Abstract
 
 	@NotNull
