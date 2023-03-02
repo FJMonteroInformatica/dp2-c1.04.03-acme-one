@@ -10,8 +10,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.Course;
 import acme.framework.data.AbstractRole;
-import entities.course.Course;
 import lombok.Getter;
 import lombok.Setter;
 

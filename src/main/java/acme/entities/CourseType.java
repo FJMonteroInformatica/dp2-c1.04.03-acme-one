@@ -1,5 +1,5 @@
 
-package entities.course;
+package acme.entities;
 
 public enum CourseType {
 	THEORY, HANDS_ON, BALANCED
