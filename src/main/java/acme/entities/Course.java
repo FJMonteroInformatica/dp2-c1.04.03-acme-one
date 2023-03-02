@@ -37,7 +37,7 @@ public class Course extends AbstractEntity {
 
 	@NotBlank
 	@Max(value = 101)
-	protected String			anAbstract;
+	protected String			_abstract;
 
 	@PositiveOrZero
 	protected Double			price;
@@ -47,12 +47,8 @@ public class Course extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
 	@Transient
-	public CourseType getType() {
-
-		return null;
-	}
+	protected CourseType		_type;
 
 	// Relationships ----------------------------------------------------------
 
