@@ -7,10 +7,10 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.components.datatypes.Money;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -39,8 +39,8 @@ public class Course extends AbstractEntity {
 	@Max(value = 101)
 	protected String			_abstract;
 
-	@PositiveOrZero
-	protected Double			price;
+	//Nought or zero, we have no annotations for this type
+	protected Money				price;
 
 	@URL
 	protected String			link;
@@ -49,6 +49,10 @@ public class Course extends AbstractEntity {
 
 	@Transient
 	protected CourseType		_type;
+	/*
+	 * Calculate this using the mode
+	 * from the list of lectures
+	 */
 
 	// Relationships ----------------------------------------------------------
 
