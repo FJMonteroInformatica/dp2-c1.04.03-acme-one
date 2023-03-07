@@ -1,6 +1,7 @@
 
 package acme.form;
 
+import acme.datatypes.Statistic;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,14 +12,8 @@ public class AuditorDashboards extends AbstractForm {
 
 	protected static final long	serialVersionUID	= 1L;
 
-	private int					totalAudits;
-	private double				avgAuditingRecords;
-	private double				devAuditingRecords;
-	private double				minAuditingRecords;
-	private double				maxAuditingRecords;
-	private double				avgPeriodLengths;
-	private double				devPeriodLengths;
-	private double				minPeriodLengths;
-	private double				maxPeriodLengths;
+	// Map<CourseType, Integer> numberOfAuditsByType;
+	private Statistic			auditingRecordsMetrics;
+	private Statistic			periodLengthsMetrics;
 
 }
