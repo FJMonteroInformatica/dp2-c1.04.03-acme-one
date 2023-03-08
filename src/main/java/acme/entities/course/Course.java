@@ -36,11 +36,11 @@ public class Course extends AbstractEntity {
 	protected String			code;
 
 	@NotBlank
-	@Max(value = 76)
+	@Max(value = 75)
 	protected String			title;
 
 	@NotBlank
-	@Max(value = 101)
+	@Max(value = 100)
 	protected String			_abstract;
 
 	//Nought or zero, we have no annotations for this type

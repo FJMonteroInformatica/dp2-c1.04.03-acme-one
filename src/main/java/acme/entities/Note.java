@@ -10,7 +10,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -36,16 +35,15 @@ public class Note extends AbstractEntity {
 	protected Date				instantiationMoment;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Length(max = 76)
-	@Pattern(regexp = "^〈\\w+〉 - 〈\\p{L}+, \\p{L}+〉$")
+	@Length(max = 75)
 	protected String			author;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	protected String			message;
 
 	@Email
