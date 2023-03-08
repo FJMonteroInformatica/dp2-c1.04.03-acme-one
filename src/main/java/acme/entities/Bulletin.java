@@ -42,7 +42,7 @@ public class Bulletin extends AbstractEntity {
 	protected String			message;
 
 	@NotNull
-	protected Boolean			flag;
+	protected Boolean			isCritical;
 
 	@URL
 	@Length(max = 255)
