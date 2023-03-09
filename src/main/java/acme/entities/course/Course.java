@@ -41,7 +41,7 @@ public class Course extends AbstractEntity {
 
 	@NotBlank
 	@Max(value = 100)
-	protected String			_abstract;
+	protected String			courseAbstract;
 
 	//Nought or zero, we have no annotations for this type
 	protected Money				price;
