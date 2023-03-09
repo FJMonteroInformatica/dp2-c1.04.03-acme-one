@@ -45,6 +45,8 @@ public class Practicum extends AbstractEntity {
 	@ManyToOne
 	protected Course			course;
 
+	boolean						draftMode;
+
 	/*
 	 * TODO:
 	 * Estimated total time (in hours, computed from the corresponding sessions plus/minus 10%).
