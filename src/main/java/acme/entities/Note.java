@@ -36,16 +36,16 @@ public class Note extends AbstractEntity {
 	protected Date				instantiationMoment;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	@Pattern(regexp = "^〈\\w+〉 - 〈\\p{L}+, \\p{L}+〉$")
 	protected String			author;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	protected String			message;
 
 	@Email
