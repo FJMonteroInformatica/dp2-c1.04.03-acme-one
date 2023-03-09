@@ -2,7 +2,12 @@
 package acme.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+import acme.entities.course.Course;
+import acme.entities.lecture.Lecture;
 import acme.framework.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -14,12 +19,22 @@ public class CourseLectureMapper extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long serialVersionUID = 1L;
+	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne()
+	protected Course			course;
+
+	@NotNull
+	@Valid
+	@ManyToOne()
+	protected Lecture			lecture;
 
 }
