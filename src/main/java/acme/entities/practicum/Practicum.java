@@ -50,6 +50,9 @@ public class Practicum extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	protected Company			company;
+
+	boolean						draftMode;
+
 	/*
 	 * TODO:
 	 * Estimated total time (in hours, computed from the corresponding sessions plus/minus 10%).
