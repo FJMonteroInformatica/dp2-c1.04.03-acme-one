@@ -29,14 +29,14 @@ public class Enrolment extends AbstractEntity {
 	protected String			code;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			motivation;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	protected String			goals;
 
-	//TODO: Transient getWorkTime() without using workbook attribute, which must be deleted
+	//TODO: Transient getWorkTime() without using workbook attribute, which must be deleted. Using a service
 
 	//	@OneToMany(mappedBy = "enrolment")
 	//	private Collection<Activity>	workbook;

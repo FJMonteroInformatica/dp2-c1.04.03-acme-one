@@ -9,7 +9,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -32,22 +31,22 @@ public class Activity extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Length(max = 101)
-	protected String			summary; //Abstract
+	@Length(max = 100)
+	protected String			activityAbstract;
 
 	@NotNull
 	protected ActivityType		activityType;
 
 	@NotNull
-	@Temporal(value = TemporalType.TIME)
+	@Temporal(value = TemporalType.TIMESTAMP)
 	protected Date				startDate;
 
 	@NotNull
-	@Temporal(value = TemporalType.TIME)
+	@Temporal(value = TemporalType.TIMESTAMP)
 	protected Date				endDate;
 
 	@URL
@@ -65,10 +64,11 @@ public class Activity extends AbstractEntity {
 		return (this.getStartDate().getTime() - this.getEndDate().getTime()) / 3600000.;
 	}
 
-	//Restricts that endDate is before startDate
-	@AssertTrue
-	public boolean isValidPeriod() {
-		return this.endDate.compareTo(this.startDate) >= 0;
-	}
+	//TODO: Make this constraint in a service
+
+	//	@AssertTrue
+	//	public boolean isValidPeriod() {
+	//		return this.endDate.compareTo(this.startDate) >= 0;
+	//	}
 
 }
