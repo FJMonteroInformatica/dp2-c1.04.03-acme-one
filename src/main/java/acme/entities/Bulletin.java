@@ -34,15 +34,15 @@ public class Bulletin extends AbstractEntity {
 	protected Date				moment;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	protected String			message;
 
 	@NotNull
-	protected Boolean			flag;
+	protected Boolean			isCritical;
 
 	@URL
 	@Length(max = 255)
