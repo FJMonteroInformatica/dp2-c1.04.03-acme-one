@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AuditorDashboards extends AbstractForm {
+public class AuditorDashboard extends AbstractForm {
 
 	protected static final long	serialVersionUID	= 1L;
 

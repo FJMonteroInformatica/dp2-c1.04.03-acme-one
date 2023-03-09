@@ -4,9 +4,12 @@ package acme.entities.audit;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
@@ -19,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class CourseAuditingRecords extends AbstractEntity {
+public class CourseAuditingRecord extends AbstractEntity {
 
 	protected static final long	serialVersionUID	= 1L;
 
@@ -39,9 +42,15 @@ public class CourseAuditingRecords extends AbstractEntity {
 	@PastOrPresent
 	protected Date				finishDate;
 
+	@NotNull
 	protected Mark				mark;
 
 	@URL
 	protected String			link;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Audit				audit;
 
 }
