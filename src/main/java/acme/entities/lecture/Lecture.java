@@ -4,15 +4,15 @@ package acme.entities.lecture;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Lecturer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,18 +28,18 @@ public class Lecture extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Max(value = 76)
+	@Length(max = 75)
 	protected String			title;
 
 	@NotBlank
-	@Max(value = 101)
+	@Length(max = 100)
 	protected String			_abstract;
 
 	@Min(value = 1)
 	protected int				learningHours;
 
 	@NotBlank
-	@Max(value = 101)
+	@Length(max = 100)
 	protected String			body;
 
 	protected boolean			isHandsOn;
@@ -53,7 +53,7 @@ public class Lecture extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne()
-	protected Course			course;
+	@ManyToOne(optional = false)
+	protected Lecturer			lecturer;
 
 }
