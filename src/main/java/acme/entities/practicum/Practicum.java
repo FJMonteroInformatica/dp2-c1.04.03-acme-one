@@ -13,6 +13,7 @@ import org.hibernate.validator.constraints.Length;
 
 import acme.entities.course.Course;
 import acme.framework.data.AbstractEntity;
+import acme.roles.Company;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +25,7 @@ public class Practicum extends AbstractEntity {
 	protected static final long	serialVersionUID	= 1L;
 
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}[0-9][0-9]{3}")
+	@Pattern(regexp = "[A-Z]{1,3}[0-9]{3}")
 	@Column(unique = true)
 	protected String			code;
 
@@ -42,9 +43,13 @@ public class Practicum extends AbstractEntity {
 
 	@NotNull
 	@Valid
-	@ManyToOne
+	@ManyToOne(optional = false)
 	protected Course			course;
 
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	protected Company			company;
 	/*
 	 * TODO:
 	 * Estimated total time (in hours, computed from the corresponding sessions plus/minus 10%).
