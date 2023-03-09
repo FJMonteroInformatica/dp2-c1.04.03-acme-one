@@ -8,7 +8,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -29,7 +29,7 @@ public class Offer extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Past
+	@PastOrPresent
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				instantiationMoment;
@@ -57,18 +57,4 @@ public class Offer extends AbstractEntity {
 	@URL
 	protected String			url;
 
-	// TODO: Create this restriction in a service
-
-	//	@AssertTrue
-	//	public boolean isValidAvailabilityPeriod() {
-	//		final long startMillis = this.availabilityPeriodStart.getTime();
-	//		final long endMillis = this.availabilityPeriodEnd.getTime();
-	//		final long instantiationMillis = this.instantiationMoment.getTime();
-	//
-	//		final boolean startIsOneDayAfterInstantiation = startMillis - ChronoUnit.DAYS.getDuration().toMillis() >= instantiationMillis;
-	//
-	//		final boolean availabilityPeriodMoreThanOneWeek = startMillis - ChronoUnit.WEEKS.getDuration().toMillis() >= endMillis;
-	//
-	//		return availabilityPeriodMoreThanOneWeek && startIsOneDayAfterInstantiation;
-	//	}
 }
