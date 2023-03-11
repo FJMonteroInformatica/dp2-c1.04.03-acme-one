@@ -9,7 +9,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Note extends AbstractEntity {
+public class Peep extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -29,10 +29,10 @@ public class Note extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Past
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	protected Date				instantiationMoment;
+	@PastOrPresent
+	@NotNull
+	protected Date				moment;
 
 	@NotBlank
 	@Length(max = 75)
@@ -40,17 +40,18 @@ public class Note extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 75)
-	@Pattern(regexp = "^〈\\w+〉 - 〈\\p{L}+, \\p{L}+〉$")
-	protected String			author;
+	protected String			nick;
 
 	@NotBlank
 	@Length(max = 100)
 	protected String			message;
 
 	@Email
-	protected String			email;
+	@Length(max = 255)
+	protected String			mail;
 
 	@URL
+	@Length(max = 255)
 	protected String			link;
 
 }
