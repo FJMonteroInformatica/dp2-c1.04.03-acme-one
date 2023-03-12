@@ -51,7 +51,7 @@ public class Practicum extends AbstractEntity {
 	@ManyToOne(optional = false)
 	protected Company			company;
 
-	boolean						draftMode;
+	protected boolean			draftMode;
 
 	/*
 	 * TODO:
