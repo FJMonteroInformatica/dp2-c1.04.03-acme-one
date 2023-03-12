@@ -40,6 +40,7 @@ public class Note extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 75)
+	@Pattern(regexp = "^〈\\w+〉 - 〈\\p{L}+, \\p{L}+〉$")
 	protected String			author;
 
 	@NotBlank
