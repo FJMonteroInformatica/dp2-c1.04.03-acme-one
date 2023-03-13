@@ -9,7 +9,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -29,7 +29,7 @@ public class Note extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Past
+	@PastOrPresent
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	protected Date				instantiationMoment;
@@ -40,7 +40,6 @@ public class Note extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 75)
-	@Pattern(regexp = "^〈\\w+〉 - 〈\\p{L}+, \\p{L}+〉$")
 	protected String			author;
 
 	@NotBlank
